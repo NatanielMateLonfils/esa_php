@@ -1,0 +1,45 @@
+header h1 {
+    padding: 1em;
+    letter-spacing: 0.1em;
+}
+
+header p{
+    text-align: center;
+    color: white;
+}
+
+#profil {
+    display: flex;
+}
+
+#container1 #contact {
+    padding-left: 1em;
+}
+
+#container1 #contact li {
+    list-style-type: none;
+}
+
+#container1 h2{
+    padding: 1em;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+#container2 h2{
+    padding: 1em;
+}
+
+#container2 p {
+    width: 70%;
+    padding-left: 2em;
+    text-align: justify;
+}
+
+#container2 ul {
+    margin-left: 1em;
+}
+
+#container2 ul li {
+    list-style: circle;
+}
