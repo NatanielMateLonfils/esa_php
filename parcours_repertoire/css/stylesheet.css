@@ -1,0 +1,47 @@
+@font-face {
+    font-family: Inter-variable;
+    src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+body {
+    font-family: Inter-variable;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    background-color: hsla(45, 16%, 90%, 0.91);
+}
+
+header img {
+    width: 130px;
+    height: 90px;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#filesArea {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+#filesArea h1 {
+    padding-bottom: 1em;
+}
+
+#filesArea .fileContainer {
+    display: flex;
+    align-items: center;
+}
+
+#filesArea img {
+    width: 25px;
+    height: 25px;
+}
