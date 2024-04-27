@@ -298,12 +298,12 @@ function playHangman($hangmanTitle) {
         if ($healthPoints === 0) {
             $alive = false;
             echo displayUserProgression($randomWord, $guessedLetters);
-            echo "Guess you'll never know the word... *hears horrendous screams*";
+            echo "Guess you'll never know the word... *hears horrendous screams*\n";
         }
         elseif ($guessedWord === $randomWord) {
             $alive = false;
             echo displayUserProgression($randomWord, $guessedLetters);
-            echo "You're good to go... *catches the fainting man*";
+            echo "You're good to go... *catches the fainting man*\n";
         }
     }
 }
