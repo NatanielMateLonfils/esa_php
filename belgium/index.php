@@ -21,8 +21,8 @@
     <?php
     if (isset($_GET['msg'])) {
         echo "<p id='warning'>" . $_GET['msg'] . "</p>";
+        echo "<img src='images/smurfs.gif' alt='Unhappy smurf'>";
     }
     ?>
-    <img src="images/smurfs.gif" alt="Unhappy smurf">
 </body>
 </html>
