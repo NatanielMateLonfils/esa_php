@@ -20,7 +20,7 @@
         $lst = explode(' ', $sentence);
         $counter = 0;
         foreach ($lst as $index => $word) {
-            foreach (str_split($word) as $char) {
+            foreach (mb_str_split($word) as $char) {
                 echo "<span id='" . $colors[$counter % 3] . "'>" . $char . "</span>";
                 $counter++;
             }
