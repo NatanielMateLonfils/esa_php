@@ -10,16 +10,16 @@
     <?php
     $sentence = $_POST['sentence'];
     $colors = ['black', 'yellow', 'red'];
-    $wordsAmount = str_word_count($sentence);
+    $words = explode(' ', $sentence);
+    $wordsAmount = count($words);
 
     if ($wordsAmount < 10) {
         $msg = "$wordsAmount words isn't enough !";
         header('Location: ../index.php?msg=' . $msg);
     }
     else {
-        $lst = explode(' ', $sentence);
         $counter = 0;
-        foreach ($lst as $index => $word) {
+        foreach ($words as $index => $word) {
             foreach (mb_str_split($word) as $char) {
                 echo "<span id='" . $colors[$counter % 3] . "'>" . $char . "</span>";
                 $counter++;
