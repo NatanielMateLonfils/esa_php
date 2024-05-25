@@ -1,0 +1,14 @@
+form {
+    padding: 2em;
+}
+
+#numberContainer {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#number {
+    font-size: 12em;
+}
