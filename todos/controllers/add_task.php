@@ -6,14 +6,15 @@ $tasks = getTasks($file_path);
 
 # Check if the task is empty or not
 if(empty($_POST['task'])){
-    $_SESSION['error'] = true;
+    $_SESSION['add_task_error'] = true;
 }
 else{
-    $_SESSION['error'] = false;
+    $_SESSION['add_task_error'] = false;
     # Update the task database with the new task
     $tasks[] = [
         'task' => $_POST['task'],
-        'completion' => 'not_completed'
+        'completion' => 'not_completed',
+        'group' => $_POST['selectedGroup']
     ];
     # Update the task database
     saveTasks($file_path, $tasks);

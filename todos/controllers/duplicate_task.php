@@ -5,11 +5,13 @@ $file_path = '../models/tasks.csv';
 $tasks = getTasks($file_path);
 $task = $tasks[$_POST['id']]['task'];
 $completed = $tasks[$_POST['id']]['completed'];
+$group = $tasks[$_POST['id']]['group'];
 
 # Duplicate the selected task in the task database
 $tasks[] = [
-    'task' => $task,
-    'completed' => $completed
+    'task' => '(copy) '.$task,
+    'completed' => $completed,
+    'group' => $group
 ];
 
 # Update the task database

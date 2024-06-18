@@ -1,3 +1,29 @@
 #completed {
     text-decoration: line-through;
 }
+
+.group {
+    display: flex;
+}
+
+.group_title {
+    width: 40%;
+}
+
+.group_options {
+    display: flex;
+    gap: 1em;
+}
+
+.task {
+    display: flex;
+}
+
+.task_title {
+    width: 40%;
+}
+
+.task_options {
+    display: flex;
+    gap: 1em;
+}
