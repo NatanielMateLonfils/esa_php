@@ -12,6 +12,10 @@
                 <input type="hidden" name="id" value="<?php echo $id?>">
                 <button type="submit">Edit</button>
             </form>
+            <form class="column" action="./controllers/duplicate_task.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $id?>">
+                <button type="submit">Duplicate</button>
+            </form>
             <form class="column" action="./controllers/delete_task.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $id?>">
                 <button type="submit">Delete</button>

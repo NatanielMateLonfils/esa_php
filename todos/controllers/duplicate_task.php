@@ -3,9 +3,14 @@ session_start();
 require '../system/functions.php';
 $file_path = '../models/tasks.csv';
 $tasks = getTasks($file_path);
+$task = $tasks[$_POST['id']]['task'];
+$completed = $tasks[$_POST['id']]['completed'];
 
-# Remove the selected task from the task database
-unset($tasks[$_POST['id']]);
+# Duplicate the selected task in the task database
+$tasks[] = [
+    'task' => $task,
+    'completed' => $completed
+];
 
 # Update the task database
 saveTasks($file_path, $tasks);
