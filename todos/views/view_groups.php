@@ -22,20 +22,20 @@
                         <li class="column" id=<?php echo $tasks[$group_name][$task_id]['completed']?>><?php echo $tasks[$group_name][$task_id]['task']?></li>
                     </div>
                     <div class="task_options">
-                        <?php if(!(count($tasks[$group_name])-1 == $task_id)): ?>
-                            <form class="column" action="./controllers/swing_task.php" method="post">
-                                <input type="hidden" name="group" value="<?php echo $group_name?>">
-                                <input type="hidden" name="task_id" value="<?php echo $task_id?>">
-                                <input type="hidden" name="direction" value="down">
-                                <button type="submit" id="arrow">&#8595;</button>
-                            </form>
-                        <?php endif; ?>
                         <?php if(!($task_id == 0)): ?>
                             <form class="column" action="./controllers/swing_task.php" method="post">
                                 <input type="hidden" name="group" value="<?php echo $group_name?>">
                                 <input type="hidden" name="task_id" value="<?php echo $task_id?>">
                                 <input type="hidden" name="direction" value="up">
                                 <button type="submit" id="arrow">&#8593;</button>
+                            </form>
+                        <?php endif; ?>
+                        <?php if(!(count($tasks[$group_name])-1 == $task_id)): ?>
+                            <form class="column" action="./controllers/swing_task.php" method="post">
+                                <input type="hidden" name="group" value="<?php echo $group_name?>">
+                                <input type="hidden" name="task_id" value="<?php echo $task_id?>">
+                                <input type="hidden" name="direction" value="down">
+                                <button type="submit" id="arrow">&#8595;</button>
                             </form>
                         <?php endif; ?>
                         <form class="column" action="./controllers/mark_task.php" method="post">
