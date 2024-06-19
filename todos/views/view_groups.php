@@ -61,7 +61,7 @@
                         <form class="column" action="./controllers/delete_task.php" method="post">
                             <input type="hidden" name="group" value="<?php echo $group_name?>">
                             <input type="hidden" name="task_id" value="<?php echo $task_id?>">
-                            <button type="submit">Delete</button>
+                            <button type="submit" class="delete_button">Delete</button>
                         </form>
                     </div>
                 </div>

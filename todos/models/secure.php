@@ -6,5 +6,6 @@ $pages =
     'add_task',
     'edit_task',
     'edit_group',
-    'move_task'
+    'move_task',
+    'view_bin'
 ];

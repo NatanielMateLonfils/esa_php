@@ -2,6 +2,7 @@
 <?php
 require './views/add_task.php';
 require './views/add_group.php';
+require './views/bin.php';
 require './views/view_tasks.php';
 require './views/view_groups.php';
 ?>

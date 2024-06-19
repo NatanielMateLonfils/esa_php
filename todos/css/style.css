@@ -30,4 +30,21 @@
 
 #arrow {
     font-size: 2em;
+    background-color: grey;
+    border-color: grey;
+}
+
+.bin_button {
+    background-color: green;
+    border-color: green;
+}
+
+.cancel_button {
+    background-color: crimson;
+    border-color: crimson;
+}
+
+.delete_button {
+    background-color: crimson;
+    border-color: crimson;
 }
