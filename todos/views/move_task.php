@@ -8,7 +8,7 @@
             <option value="<?php echo $group?>"><?php echo $group?></option>
         <?php endforeach?>
     </select>
-    <input type="submit">
+    <input type="submit" value="APPLY">
 </form>
 <form action="../index.php">
     <button type="submit" class="cancel_button">CANCEL</button>

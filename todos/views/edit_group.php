@@ -17,7 +17,7 @@ unset($_SESSION['edit_group_error']);
     <label>Edit your group here :</label>
     <input type="hidden" name="group_id" value="<?php echo $_POST['group_id']?>">
     <input type="text" name="group" placeholder="<?php echo $groups[$_POST['group_id']]['group']?>">
-    <input type="submit">
+    <input type="submit" value="APPLY">
     <span class=<?php echo $color?>><?php echo $edit_group_result?></span>
 </form>
 <form action="../index.php">

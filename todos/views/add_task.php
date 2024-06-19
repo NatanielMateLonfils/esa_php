@@ -22,6 +22,6 @@ unset($_SESSION['add_task_error']);
             <option value="<?php echo $group?>"><?php echo $group?></option>
         <?php endforeach?>
     </select>
-    <input type="submit">
+    <input type="submit" value="ADD">
     <span class=<?php echo $color?>><?php echo $task_result?></span>
 </form>

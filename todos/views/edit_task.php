@@ -18,7 +18,7 @@ unset($_SESSION['edit_task_error']);
     <input type="hidden" name="group" value="<?php echo $_POST['group']?>">
     <input type="hidden" name="task_id" value="<?php echo $_POST['task_id']?>">
     <input type="text" name="task" placeholder="<?php echo $tasks[$_POST['group']][$_POST['task_id']]['task']?>">
-    <input type="submit">
+    <input type="submit" value="APPLY">
     <span class=<?php echo $color?>><?php echo $edit_task_result?></span>
 </form>
 <form action="../index.php">
