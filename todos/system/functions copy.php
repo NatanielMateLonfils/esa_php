@@ -6,12 +6,13 @@ function getTasks($file_path, $current_groups){
     if (file_exists($file_path)){
         $file = fopen($file_path, 'r');
 
-        $tasks['Ungrouped'] = [];
-        foreach($current_groups as $group){
-            $tasks[$group] = [];
+        if (filesize($file_path) == 0){
+            $tasks['Ungrouped'] = [];
+            foreach($current_groups as $group){
+                $tasks[$group] = [];
+            }
         }
-
-        if (!(filesize($file_path) == 0)){
+        else{
             while ($line = fgetcsv($file)){
                 $group = $line[2];
                 if (!(in_array($group, array_keys($tasks)))){
@@ -23,7 +24,7 @@ function getTasks($file_path, $current_groups){
                     'group' => $group
                 ];
                 array_push($tasks[$group], $task);
-            }   
+            }
         }
         fclose($file);
     }

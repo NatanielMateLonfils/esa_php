@@ -16,7 +16,7 @@ else{
         'group' => $_POST['group']
     ];
     # Update the group database
-    saveTasks($groups_path, $groups);
+    saveGroups($groups_path, $groups);
 }
 
 # Jump back to the main page
