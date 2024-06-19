@@ -1,17 +1,30 @@
 <?php
 
-function getTasks($file_path){
+function getTasks($file_path, $current_groups){
     $tasks = [];
 
     if (file_exists($file_path)){
         $file = fopen($file_path, 'r');
 
-        while ($line = fgetcsv($file)){
-            $tasks[] = [
-                'task' => $line[0],
-                'completed' => $line[1],
-                'group' => $line[2]
-            ];
+        if (filesize($file_path) == 0){
+            $tasks['Ungrouped'] = [];
+            foreach($current_groups as $group){
+                $tasks[$group] = [];
+            }
+        }
+        else{
+            while ($line = fgetcsv($file)){
+                $group = $line[2];
+                if (!(in_array($group, array_keys($tasks)))){
+                    $tasks[$group] = [];
+                }
+                $task = [
+                    'task' => $line[0],
+                    'completed' => $line[1],
+                    'group' => $group
+                ];
+                array_push($tasks[$group], $task);
+            }
         }
         fclose($file);
     }
@@ -20,11 +33,12 @@ function getTasks($file_path){
 
 function saveTasks($file_path, $tasks){
     $file = fopen($file_path, 'w');
-
-    foreach ($tasks as $task){
-        fputcsv($file, $task);
+    
+    foreach($tasks as $task){
+        foreach ($task as $task){
+            fputcsv($file, $task);
+        }
     }
-
     fclose($file);
 }
 
@@ -50,7 +64,6 @@ function saveGroups($file_path, $groups){
     foreach ($groups as $group){
         fputcsv($file, $group);
     }
-
     fclose($file);
 }
 

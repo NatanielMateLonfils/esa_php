@@ -15,8 +15,8 @@ unset($_SESSION['edit_group_error']);
 
 <form action="./controllers/edit_group.php" method="post">
     <label>Edit your group here :</label>
-    <input type="hidden" name="id" value="<?php echo $_POST['id']?>">
-    <input type="text" name="group" placeholder="<?php echo $groups[$_POST['id']]['group']?>">
+    <input type="hidden" name="group_id" value="<?php echo $_POST['group_id']?>">
+    <input type="text" name="group" placeholder="<?php echo $groups[$_POST['group_id']]['group']?>">
     <input type="submit">
     <span class=<?php echo $color?>><?php echo $edit_group_result?></span>
 </form>

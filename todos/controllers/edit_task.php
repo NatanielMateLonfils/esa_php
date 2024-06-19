@@ -2,7 +2,10 @@
 session_start();
 require '../system/functions.php';
 $tasks_path = '../models/tasks.csv';
-$tasks = getTasks($tasks_path);
+$groups_path = '../models/groups.csv';
+$current_groups = getCurrentGroups($groups_path);
+$tasks = getTasks($tasks_path, $current_groups);
+$group = $_POST['group'];
 
 # Check if the task is empty or not
 if(empty($_POST['task'])){
@@ -11,7 +14,7 @@ if(empty($_POST['task'])){
 else{
     $_SESSION['edit_task_error'] = false;
     # Update the task database with the edited task
-    $tasks[$_POST['id']]['task'] = $_POST['task'];
+    $tasks[$group][$_POST['task_id']]['task'] = $_POST['task'];
     # Update the task database
     saveTasks($tasks_path, $tasks);
 }

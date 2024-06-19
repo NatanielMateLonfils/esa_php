@@ -1,14 +1,17 @@
 <?php
 session_start();
 require '../system/functions.php';
-$file_path = '../models/tasks.csv';
-$tasks = getTasks($file_path);
+$tasks_path = '../models/tasks.csv';
+$groups_path = '../models/groups.csv';
+$current_groups = getCurrentGroups($groups_path);
+$tasks = getTasks($tasks_path, $current_groups);
+$group = $_POST['group'];
 
 # Remove the selected task from the task database
-unset($tasks[$_POST['id']]);
+unset($tasks[$group][$_POST['task_id']]);
 
 # Update the task database
-saveTasks($file_path, $tasks);
+saveTasks($tasks_path, $tasks);
 
 # Jump back to the main page
 header('Location: ../index.php');

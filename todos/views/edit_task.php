@@ -15,8 +15,9 @@ unset($_SESSION['edit_task_error']);
 
 <form action="./controllers/edit_task.php" method="post">
     <label>Edit your task here :</label>
-    <input type="hidden" name="id" value="<?php echo $_POST['id']?>">
-    <input type="text" name="task" placeholder="<?php echo $tasks[$_POST['id']]['task']?>">
+    <input type="hidden" name="group" value="<?php echo $_POST['group']?>">
+    <input type="hidden" name="task_id" value="<?php echo $_POST['task_id']?>">
+    <input type="text" name="task" placeholder="<?php echo $tasks[$_POST['group']][$_POST['task_id']]['task']?>">
     <input type="submit">
     <span class=<?php echo $color?>><?php echo $edit_task_result?></span>
 </form>

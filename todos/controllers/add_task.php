@@ -1,8 +1,10 @@
 <?php
 session_start();
 require '../system/functions.php';
-$file_path = '../models/tasks.csv';
-$tasks = getTasks($file_path);
+$tasks_path = '../models/tasks.csv';
+$groups_path = '../models/groups.csv';
+$current_groups = getCurrentGroups($groups_path);
+$tasks = getTasks($tasks_path, $current_groups);
 
 # Check if the task is empty or not
 if(empty($_POST['task'])){
@@ -11,13 +13,15 @@ if(empty($_POST['task'])){
 else{
     $_SESSION['add_task_error'] = false;
     # Update the task database with the new task
-    $tasks[] = [
+    $group = $_POST['selectedGroup'];
+    $task = [
         'task' => $_POST['task'],
         'completion' => 'not_completed',
         'group' => $_POST['selectedGroup']
     ];
+    array_push($tasks[$group], $task);
     # Update the task database
-    saveTasks($file_path, $tasks);
+    saveTasks($tasks_path, $tasks);
 }
 
 # Jump back to the main page

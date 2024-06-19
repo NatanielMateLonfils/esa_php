@@ -19,7 +19,7 @@ unset($_SESSION['add_task_error']);
     <select name="selectedGroup">
         <option value="Ungrouped">Ungrouped</option>
         <?php foreach($current_groups as $group): ?>
-            <option value=<?php echo $group?>><?php echo $group?></option>
+            <option value="<?php echo $group?>"><?php echo $group?></option>
         <?php endforeach?>
     </select>
     <input type="submit">
