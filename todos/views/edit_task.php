@@ -5,10 +5,6 @@ if(isset($_SESSION['edit_task_error'])){
         $edit_task_result = 'Failed to edit the task.';
         $color = 'pico-color-red-250';
     }
-    else{
-        $edit_task_result = 'Successfully edited the task.';
-        $color = 'pico-color-jade-250';
-    }
 }
 unset($_SESSION['edit_task_error']);
 ?>

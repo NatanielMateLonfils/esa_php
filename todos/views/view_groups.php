@@ -1,5 +1,6 @@
 <?php foreach ($groups as $group_id => $group_title): ?>
     <?php $total_group = count($tasks[$group_title['group']]) ?>
+    <?php if ($group_title['property'] == $connected_user): ?>
     <div class="group">
         <div class="group_title">
             <h2 class="pico-color-purple-450"><?php echo $group_title['group'] . " ($total_group)"?></h2>
@@ -15,9 +16,10 @@
             </form>
         </div>
     </div>
+    <?php endif; ?>
     <?php foreach($tasks as $group_name => $group): ?>
         <?php foreach($group as $task_id => $task): ?>
-            <?php if ($task['group'] == $group_title['group']): ?>
+            <?php if (($task['group'] == $group_title['group']) && ($task['property'] == $connected_user)): ?>
             <div class="task">
                 <div class="task_title">
                     <li class="column" id=<?php echo $tasks[$group_name][$task_id]['completed']?>><?php echo $tasks[$group_name][$task_id]['task']?></li>

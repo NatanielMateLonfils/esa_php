@@ -13,7 +13,8 @@ else{
     $_SESSION['add_group_error'] = false;
     # Update the group database with the new group
     $groups[] = [
-        'group' => $_POST['group']
+        'group' => $_POST['group'],
+        'property' => $_POST['property']
     ];
     # Update the group database
     saveGroups($groups_path, $groups);

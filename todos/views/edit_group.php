@@ -5,10 +5,6 @@ if(isset($_SESSION['edit_group_error'])){
         $edit_group_result = 'Failed to edit the group.';
         $color = 'pico-color-red-250';
     }
-    else{
-        $edit_group_result = 'Successfully edited the group.';
-        $color = 'pico-color-jade-250';
-    }
 }
 unset($_SESSION['edit_group_error']);
 ?>

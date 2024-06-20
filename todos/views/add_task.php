@@ -14,9 +14,10 @@ unset($_SESSION['add_task_error']);
 ?>
 
 <form action="./controllers/add_task.php" method="post">
-    <label>Type a task :</label>
-    <input type="text" name="task">
-    <label>Select a group : </label>
+    <label>Add a task</label>
+    <input type="hidden" name="property" value="<?php echo $connected_user ?>">
+    <input type="text" name="task" placeholder="Type your task here...">
+    <label>Select a group</label>
     <select name="selectedGroup">
         <option value="Ungrouped">Ungrouped</option>
         <?php foreach($current_groups as $group): ?>

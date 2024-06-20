@@ -20,10 +20,11 @@ function getTasks($file_path, $current_groups){
                 $task = [
                     'task' => $line[0],
                     'completed' => $line[1],
-                    'group' => $group
+                    'group' => $group,
+                    'property' => $line[3]
                 ];
                 array_push($tasks[$group], $task);
-            }   
+            }
         }
         fclose($file);
     }
@@ -49,7 +50,8 @@ function getGroups($file_path){
 
         while ($line = fgetcsv($file)){
             $groups[] = [
-                'group' => $line[0]
+                'group' => $line[0],
+                'property' => $line[1]
             ];
         }
         fclose($file);
@@ -78,4 +80,44 @@ function getCurrentGroups($file_path){
         fclose($file);
     }
     return $current_groups;
+}
+
+function getUsers($file_path){
+    $users = [];
+
+    if (file_exists($file_path)){
+        $file = fopen($file_path, 'r');
+
+        while ($line = fgetcsv($file)){
+            array_push($users, $line);
+        }
+        fclose($file);
+    }
+    return $users;
+}
+
+function getCurrentUsers($file_path){
+    $current_users = [];
+
+    if (file_exists($file_path)){
+        $file = fopen($file_path, 'r');
+
+        while ($line = fgetcsv($file)){
+            array_push($current_users, $line[0]);
+        }
+        fclose($file);
+    }
+    return $current_users;
+}
+
+function countUserBin($deleted_tasks, $connected_user){
+    $total = 0;
+    foreach ($deleted_tasks as $group){
+        foreach ($group as $task){
+            if ($task['property'] == $connected_user){
+                $total++;
+            }
+        }
+    }
+    return $total;
 }

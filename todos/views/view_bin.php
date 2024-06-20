@@ -2,11 +2,12 @@
 <form action="../index.php">
     <button type="submit" class="cancel_button">Cancel</button>
 </form>
-<?php if (empty($deleted_tasks['Ungrouped'])): ?>
+<?php if (countUserBin($deleted_tasks, $connected_user) == 0): ?>
     <p>The bin is currently empty...</p>
 <?php endif; ?>
 <?php foreach($deleted_tasks as $group_name => $group): ?>
     <?php foreach($group as $task_id => $task): ?>
+        <?php if ($task['property'] == $connected_user): ?>
         <div class="task">
             <div class="task_title">
                 <li class="column"><?php echo $deleted_tasks[$group_name][$task_id]['task']?></li>
@@ -24,5 +25,6 @@
                 </form>
             </div>
         </div>
+        <?php endif; ?>
     <?php endforeach; ?>
 <?php endforeach; ?>

@@ -1,6 +1,6 @@
 <?php foreach($tasks as $group_name => $group): ?>
     <?php foreach($group as $task_id => $task): ?>
-        <?php if ($task['group'] == 'Ungrouped'): ?>
+        <?php if (($task['group'] == 'Ungrouped') && ($task['property'] == $connected_user)): ?>
         <div class="task">
             <div class="task_title">
                 <li class="column" id=<?php echo $tasks[$group_name][$task_id]['completed']?>><?php echo $tasks[$group_name][$task_id]['task']?></li>

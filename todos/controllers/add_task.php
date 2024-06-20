@@ -17,7 +17,8 @@ else{
     $task = [
         'task' => $_POST['task'],
         'completion' => 'not_completed',
-        'group' => $_POST['selectedGroup']
+        'group' => $_POST['selectedGroup'],
+        'property' => $_POST['property']
     ];
     array_push($tasks[$group], $task);
     # Update the task database

@@ -1,3 +1,20 @@
+header {
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2em;
+}
+
+header .login_options {
+    display: flex;
+    gap: 0.2em;
+}
+
+header form {
+    display: flex;
+    gap: 0.2em;
+}
+
 #completed {
     text-decoration: line-through;
     color: crimson;
@@ -5,10 +22,7 @@
 
 .group {
     display: flex;
-}
-
-.group_title {
-    width: 90%;
+    justify-content: space-between;
 }
 
 .group_options {
@@ -18,10 +32,7 @@
 
 .task {
     display: flex;
-}
-
-.task_title {
-    width: 50%;
+    justify-content: space-between;
 }
 
 .task_options {
@@ -33,6 +44,16 @@
     font-size: 2em;
     background-color: grey;
     border-color: grey;
+}
+
+.login_button {
+    background-color:rgb(107, 16, 193);
+    border-color: rgb(107, 16, 193);
+}
+
+.create_user_button {
+    background-color:rgb(171, 120, 218);
+    border-color: rgb(171, 120, 218);
 }
 
 .bin_button {
@@ -58,4 +79,9 @@
 .restore_button {
     background-color: royalblue;
     border-color: royalblue;
+}
+
+.logout_button {
+    background-color:rgb(107, 16, 193);
+    border-color: rgb(107, 16, 193);
 }

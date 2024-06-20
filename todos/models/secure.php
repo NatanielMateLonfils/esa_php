@@ -7,5 +7,7 @@ $pages =
     'edit_task',
     'edit_group',
     'move_task',
-    'view_bin'
+    'view_bin',
+    'login',
+    'create_user'
 ];

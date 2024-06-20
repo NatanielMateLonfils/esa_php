@@ -1,7 +1,7 @@
 <?php
-$total_bin = count($deleted_tasks['Ungrouped'])
+$total_bin = countUserBin($deleted_tasks, $connected_user);
 ?>
 
 <form action="index.php?page=view_bin" method="post">
-    <button class="bin_button">View bin (<?php echo $total_bin ?>)</button>
+    <button class="bin_button">&#128465; View bin (<?php echo $total_bin ?>)</button>
 </form>

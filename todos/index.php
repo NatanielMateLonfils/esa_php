@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (isset($_SESSION['connected_user'])){
+    $connected_user = $_SESSION['connected_user'];
+}
+else{
+    $connected_user = 'Anonymous';
+}
+
 require './models/secure.php';
 require './views/layout/head.php';
 require './system/functions.php';
