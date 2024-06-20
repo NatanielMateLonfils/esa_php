@@ -1,5 +1,6 @@
 #completed {
     text-decoration: line-through;
+    color: crimson;
 }
 
 .group {
@@ -7,7 +8,7 @@
 }
 
 .group_title {
-    width: 50%;
+    width: 90%;
 }
 
 .group_options {
@@ -47,4 +48,14 @@
 .delete_button {
     background-color: crimson;
     border-color: crimson;
+}
+
+.delete_forever_button {
+    background-color: rgb(139, 13, 38);
+    border-color: rgb(139, 13, 38);
+}
+
+.restore_button {
+    background-color: royalblue;
+    border-color: royalblue;
 }

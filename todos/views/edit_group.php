@@ -21,5 +21,5 @@ unset($_SESSION['edit_group_error']);
     <span class=<?php echo $color?>><?php echo $edit_group_result?></span>
 </form>
 <form action="../index.php">
-    <button type="submit" class="cancel_button">CANCEL</button>
+    <button type="submit" class="cancel_button">Cancel</button>
 </form>

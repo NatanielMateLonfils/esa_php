@@ -14,7 +14,7 @@ unset($_SESSION['add_group_error']);
 ?>
 
 <form action="./controllers/add_group.php" method="post">
-    <label>Add a group here :</label>
+    <label>Type a group :</label>
     <input type="text" name="group">
     <input type="submit" value="ADD">
     <span class=<?php echo $color?>><?php echo $group_result?></span>

@@ -32,9 +32,9 @@ function getTasks($file_path, $current_groups){
 
 function saveTasks($file_path, $tasks){
     $file = fopen($file_path, 'w');
-    
-    foreach($tasks as $task){
-        foreach ($task as $task){
+    var_dump($tasks);
+    foreach($tasks as $group){
+        foreach ($group as $task){
             fputcsv($file, $task);
         }
     }

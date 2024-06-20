@@ -1,7 +1,8 @@
 <?php foreach ($groups as $group_id => $group_title): ?>
+    <?php $total_group = count($tasks[$group_title['group']]) ?>
     <div class="group">
         <div class="group_title">
-            <h2 class="pico-color-purple-450"><?php echo $group_title['group']?></h2>
+            <h2 class="pico-color-purple-450"><?php echo $group_title['group'] . " ($total_group)"?></h2>
         </div>
         <div class="group_options">
             <form action="index.php?page=edit_group" method="post">

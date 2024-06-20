@@ -11,5 +11,5 @@
     <input type="submit" value="APPLY">
 </form>
 <form action="../index.php">
-    <button type="submit" class="cancel_button">CANCEL</button>
+    <button type="submit" class="cancel_button">Cancel</button>
 </form>
