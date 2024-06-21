@@ -86,6 +86,11 @@ header form {
     border-color: royalblue;
 }
 
+.restore_bin_button {
+    background-color: royalblue;
+    border-color: royalblue;
+}
+
 .logout_button {
     background-color:rgb(107, 16, 193);
     border-color: rgb(107, 16, 193);

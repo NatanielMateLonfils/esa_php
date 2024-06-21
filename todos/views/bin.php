@@ -10,4 +10,8 @@ $total_bin = countUserBin($deleted_tasks, $connected_user);
         <input type="hidden" name="connected_user" value="<?php echo $connected_user ?>">
         <button class="empty_bin_button">Empty bin</button>
     </form>
+    <form action="./controllers/restore_bin.php" method="post">
+        <input type="hidden" name="connected_user" value="<?php echo $connected_user ?>">
+        <button class="restore_bin_button">Restore bin</button>
+    </form>
 </div>
