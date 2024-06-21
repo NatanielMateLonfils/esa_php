@@ -29,12 +29,12 @@ unset($_SESSION['log_user_error']);
             </form>
             <form action="./controllers/switch_theme.php" method="post">
                 <input type="hidden" name="theme" value="<?php echo $theme ?>">
-                <button type="submit" id="<?php echo $theme ?>"><?php echo $theme_message ?></button>
+                <button type="submit" id="<?php echo $button_theme ?>"><?php echo $theme_message ?></button>
             </form>
             <?php else: ?>
             <form action="./controllers/switch_theme.php" method="post">
                 <input type="hidden" name="theme" value="<?php echo $theme ?>">
-                <button type="submit" id="<?php echo $theme ?>"><?php echo $theme_message ?></button>
+                <button type="submit" id="<?php echo $button_theme ?>"><?php echo $theme_message ?></button>
             </form>
             <form action="./controllers/logout_user.php" method="post">
                 <input type="hidden" name="connected_user" value="<?php echo $connected_user ?>">

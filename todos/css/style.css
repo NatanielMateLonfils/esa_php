@@ -3,6 +3,16 @@
     color: white;
 }
 
+#buttondark {
+    background-color: black;
+    border-color: black;
+}
+
+#buttonlight {
+    background-color: gray;
+    border-color: gray;
+}
+
 header button .dark {
     background-color: gray;
 }

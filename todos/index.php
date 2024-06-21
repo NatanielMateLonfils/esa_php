@@ -11,10 +11,12 @@ if (isset($_SESSION['theme'])){
     if ($_SESSION['theme'] == 'dark'){
         $theme = 'dark';
         $theme_message = 'Light mode';
+        $button_theme = 'buttonlight';
     }
     else{
         $theme = 'light';
         $theme_message = 'Dark mode';
+        $button_theme = 'buttondark';
     }
 }
 else{
