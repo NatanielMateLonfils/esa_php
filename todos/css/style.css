@@ -61,6 +61,11 @@ header form {
     border-color: green;
 }
 
+.empty_bin_button {
+    background-color: rgb(2, 172, 2);
+    border-color: rgb(2, 172, 2);
+}
+
 .cancel_button {
     background-color: crimson;
     border-color: crimson;
@@ -84,4 +89,9 @@ header form {
 .logout_button {
     background-color:rgb(107, 16, 193);
     border-color: rgb(107, 16, 193);
+}
+
+.bin_field {
+    display: flex;
+    gap: 1em;
 }

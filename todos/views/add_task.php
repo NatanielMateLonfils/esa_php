@@ -20,8 +20,10 @@ unset($_SESSION['add_task_error']);
     <label>Select a group</label>
     <select name="selectedGroup">
         <option value="Ungrouped">Ungrouped</option>
-        <?php foreach($current_groups as $group): ?>
-            <option value="<?php echo $group?>"><?php echo $group?></option>
+        <?php foreach($users_groups as $group_name => $property): ?>
+            <?php if($property == $connected_user): ?>
+            <option value="<?php echo $group_name?>"><?php echo $group_name?></option>
+            <?php endif; ?>
         <?php endforeach?>
     </select>
     <input type="submit" value="ADD">

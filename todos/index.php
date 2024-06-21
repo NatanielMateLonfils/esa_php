@@ -17,6 +17,7 @@ $groups = getGroups($groups_path);
 $current_groups = getCurrentGroups($groups_path);
 $tasks = getTasks($tasks_path, $current_groups);
 $deleted_tasks = getTasks($bin_path, $current_groups);
+$users_groups = getUsersGroups($groups_path);
 
 if ($_GET['page'] && in_array($_GET['page'], $pages)){
     require './views/'.$_GET['page'].'.php';

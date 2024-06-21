@@ -173,3 +173,17 @@ function isHighestTask($tasks, $group_name, $swap_id, $connected_user){
         return false;
     }
 }
+
+function getUsersGroups($file_path){
+    $users_groups = [];
+
+    if (file_exists($file_path)){
+        $file = fopen($file_path, 'r');
+
+        while ($line = fgetcsv($file)){
+            #array_push($users_groups, $line);
+            $users_groups[$line[0]] = $line[1];
+        }
+    }
+    return $users_groups;
+}

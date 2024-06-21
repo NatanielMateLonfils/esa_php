@@ -4,7 +4,7 @@ require '../system/functions.php';
 $users_path = '../models/users.csv';
 $username = $_POST['username'];
 $password = $_POST['password'];
-$hashed_password = md5($password);
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 $current_users = getCurrentUsers($users_path);
 
 # Check if the username already exists or is empty
