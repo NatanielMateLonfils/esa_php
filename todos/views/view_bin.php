@@ -1,4 +1,4 @@
-<h1>BIN</h1>
+<h1>BIN &#128465;</h1>
 <form action="../index.php">
     <button type="submit" class="cancel_button">Cancel</button>
 </form>

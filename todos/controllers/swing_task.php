@@ -7,14 +7,15 @@ $current_groups = getCurrentGroups($groups_path);
 $tasks = getTasks($tasks_path, $current_groups);
 $group = $_POST['group'];
 $direction = $_POST['direction'];
-$task_id = $_POST['task_id'];
+$task_id = intval($_POST['task_id']);
+$connected_user = $_POST['property'];
 
 # Swing the the task according to the direction given
 if ($direction == 'down'){
-    [$tasks[$group][$task_id], $tasks[$group][$task_id+1]] = [$tasks[$group][$task_id+1], $tasks[$group][$task_id]];
+    $tasks = swingDown($tasks, $group, $task_id, $connected_user);
 }
 elseif ($direction == 'up'){
-    [$tasks[$group][$task_id], $tasks[$group][$task_id-1]] = [$tasks[$group][$task_id-1], $tasks[$group][$task_id]];
+    $tasks = swingUp($tasks, $group, $task_id, $connected_user);
 }
 
 # Update the task database

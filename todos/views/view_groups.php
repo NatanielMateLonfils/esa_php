@@ -25,16 +25,18 @@
                     <li class="column" id=<?php echo $tasks[$group_name][$task_id]['completed']?>><?php echo $tasks[$group_name][$task_id]['task']?></li>
                 </div>
                 <div class="task_options">
-                    <?php if(!($task_id == 0)): ?>
+                    <?php if(!(isLowestTask($tasks, $group_name, $task_id, $connected_user))): ?>
                         <form class="column" action="./controllers/swing_task.php" method="post">
+                            <input type="hidden" name="property" value="<?php echo $connected_user ?>">
                             <input type="hidden" name="group" value="<?php echo $group_name?>">
                             <input type="hidden" name="task_id" value="<?php echo $task_id?>">
                             <input type="hidden" name="direction" value="up">
                             <button type="submit" id="arrow">&#8593;</button>
                         </form>
                     <?php endif; ?>
-                    <?php if(!(count($tasks[$group_name])-1 == $task_id)): ?>
+                    <?php if(!(isHighestTask($tasks, $group_name, $task_id, $connected_user))): ?>
                         <form class="column" action="./controllers/swing_task.php" method="post">
+                            <input type="hidden" name="property" value="<?php echo $connected_user ?>">
                             <input type="hidden" name="group" value="<?php echo $group_name?>">
                             <input type="hidden" name="task_id" value="<?php echo $task_id?>">
                             <input type="hidden" name="direction" value="down">

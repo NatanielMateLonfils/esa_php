@@ -33,7 +33,6 @@ function getTasks($file_path, $current_groups){
 
 function saveTasks($file_path, $tasks){
     $file = fopen($file_path, 'w');
-    var_dump($tasks);
     foreach($tasks as $group){
         foreach ($group as $task){
             fputcsv($file, $task);
@@ -120,4 +119,57 @@ function countUserBin($deleted_tasks, $connected_user){
         }
     }
     return $total;
+}
+
+function swingUp($tasks, $group_name, $swap_id, $connected_user){
+    $target_id = 0;
+    foreach ($tasks[$group_name] as $task_id => $task){
+        if (($task['property'] == $connected_user) && !($task_id == $swap_id)){
+            $target_id = $task_id;
+        }
+        elseif (($task['property'] == $connected_user) && ($task_id == $swap_id)){
+            [$tasks[$group_name][$swap_id], $tasks[$group_name][$target_id]] = [$tasks[$group_name][$target_id], $tasks[$group_name][$swap_id]];
+        }
+    }
+    return $tasks;
+}
+
+function swingDown($tasks, $group_name, $swap_id, $connected_user){
+    foreach ($tasks[$group_name] as $task_id => $task){
+        if (($task['property'] == $connected_user) && ($task_id > $swap_id)){
+            [$tasks[$group_name][$swap_id], $tasks[$group_name][$task_id]] = [$tasks[$group_name][$task_id], $tasks[$group_name][$swap_id]];
+            return $tasks;
+        }
+    }
+}
+
+function isLowestTask($tasks, $group_name, $swap_id, $connected_user){
+    $ids = [];
+    foreach ($tasks[$group_name] as $task_id => $task){
+        if ($task['property'] == $connected_user){
+            array_push($ids, $task_id);
+        }
+    }
+    if ($ids[0] == $swap_id){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function isHighestTask($tasks, $group_name, $swap_id, $connected_user){
+    $ids = [];
+    foreach ($tasks[$group_name] as $task_id => $task){
+        if ($task['property'] == $connected_user){
+            array_push($ids, $task_id);
+        }
+    }
+    $ids = array_reverse($ids);
+    if ($ids[0] == $swap_id){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
