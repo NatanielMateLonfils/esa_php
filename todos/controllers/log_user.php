@@ -18,9 +18,10 @@ foreach ($users as $user){
         # Jump back to the main page
         header('Location: ../index.php');
     }
+    else{
+        $_SESSION['log_user_error'] = true;
+    }
 }
-
-$_SESSION['log_user_error'] = true;
 
 # Jump back to the main page
 header('Location: ../index.php');

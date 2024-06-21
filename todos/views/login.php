@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(isset($_SESSION['log_user_error'])){
     if($_SESSION['log_user_error']){
         $log_user_result = 'Failed to login.';
@@ -15,6 +16,7 @@ unset($_SESSION['log_user_error']);
 
 <header>
     <span>&#128100;<?php echo $connected_user ?></span>
+    <span class=<?php echo $color?>><?php echo $log_user_result?></span>
     <?php if ($connected_user == 'Anonymous'): ?>
         <div class="login_options">
             <form action="./controllers/log_user.php" method="post">
