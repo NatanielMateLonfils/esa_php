@@ -18,7 +18,7 @@ unset($_SESSION['add_task_error']);
     <input type="hidden" name="property" value="<?php echo $connected_user ?>">
     <input type="text" name="task" placeholder="Type your task here...">
     <label>Select a group</label>
-    <select name="selectedGroup">
+    <select name="selectedGroup" id="select">
         <option value="Ungrouped">Ungrouped</option>
         <?php foreach($users_groups as $group_name => $property): ?>
             <?php if($property == $connected_user): ?>

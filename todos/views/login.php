@@ -20,8 +20,8 @@ unset($_SESSION['log_user_error']);
     <?php if ($connected_user == 'Anonymous'): ?>
         <div class="login_options">
             <form action="./controllers/log_user.php" method="post">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
+                <input id="special_field" type="text" name="username" placeholder="Username">
+                <input id="special_field" type="password" name="password" placeholder="Password">
                 <button type="submit" class="login_button">Login</button>
             </form>
             <form action="index.php?page=create_user" method="post">

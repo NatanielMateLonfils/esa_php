@@ -3,6 +3,14 @@
     color: white;
 }
 
+#special_field {
+    color: gray;
+}
+
+#select {
+    color: gray;
+}
+
 #buttondark {
     background-color: black;
     border-color: black;
