@@ -7,6 +7,21 @@ else{
     $connected_user = 'Anonymous';
 }
 
+if (isset($_SESSION['theme'])){
+    if ($_SESSION['theme'] == 'dark'){
+        $theme = 'dark';
+        $theme_message = 'Light mode';
+    }
+    else{
+        $theme = 'light';
+        $theme_message = 'Dark mode';
+    }
+}
+else{
+    $theme = 'light';
+    $theme_message = 'Dark mode';
+}
+
 require './models/secure.php';
 require './views/layout/head.php';
 require './system/functions.php';

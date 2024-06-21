@@ -13,4 +13,4 @@ session_start();
     <link rel="stylesheet" href="./css/style.css">
     <title>Home</title>
 </head>
-<body class="container">
+<body class="container" id="<?php echo $theme?>">
