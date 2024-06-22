@@ -13,15 +13,21 @@ function getTasks($file_path, $current_groups){
 
         if (!(filesize($file_path) == 0)){
             while ($line = fgetcsv($file)){
+                $completed = $line[1];
                 $group = $line[2];
+                $date = $line[4];
                 if (!(in_array($group, array_keys($tasks)))){
                     $tasks[$group] = [];
                 }
+                if (($date <= date("Y-m-d"))){
+                    $completed = 'completed';
+                }
                 $task = [
                     'task' => $line[0],
-                    'completed' => $line[1],
+                    'completed' => $completed,
                     'group' => $group,
-                    'property' => $line[3]
+                    'property' => $line[3],
+                    'date' => $date
                 ];
                 array_push($tasks[$group], $task);
             }

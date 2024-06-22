@@ -9,13 +9,15 @@ $group = $_POST['group'];
 $task = $tasks[$group][$_POST['task_id']]['task'];
 $completed = $tasks[$group][$_POST['task_id']]['completed'];
 $property = $tasks[$group][$_POST['task_id']]['property'];
+$date = $tasks[$group][$_POST['task_id']]['date'];
 
 # Duplicate the selected task in the task database
 $copied_task = [
     'task' => '(copy) '.$task,
     'completed' => $completed,
     'group' => $group,
-    'property' => $property
+    'property' => $property,
+    'date' => $date
 ];
 array_push($tasks[$group], $copied_task);
 

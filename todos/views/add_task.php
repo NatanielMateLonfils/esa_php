@@ -17,6 +17,7 @@ unset($_SESSION['add_task_error']);
     <label>Add a task</label>
     <input type="hidden" name="property" value="<?php echo $connected_user ?>">
     <input type="text" name="task" placeholder="Type your task here...">
+    <input type="date" name="date">
     <label>Select a group</label>
     <select name="selectedGroup" id="select">
         <option value="Ungrouped">Ungrouped</option>
